@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Main {
     public static Scanner in;
+
     public static void main(String[] args) {
         in = new Scanner(System.in);
-
         File file;
 
         if (args.length == 1) {
@@ -18,12 +18,12 @@ public class Main {
         if (file.isDirectory()) {
             for (File elem : Objects.requireNonNull(file.listFiles()))
                 if (elem.isFile()) {
-                    System.out.print("\nF " + elem.getName());
+                    System.out.print("\nFile: " + elem.getName());
                 } else {
-                    System.out.print("\nD " + elem.getName());
+                    System.out.print("\nDirectory: " + elem.getName());
                 }
         } else {
-            System.out.print("\nPath non esistente!");
+            System.err.print("\nErrore: Path non esistente!");
         }
     }
 }
